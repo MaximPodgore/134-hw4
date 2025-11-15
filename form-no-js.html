@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact — No JS form</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Contact Us</h1>
+
+      <p>If you'd like to get in touch, please fill out the form below and press Send. This version works without JavaScript.</p>
+
+      <form id="contactForm" action="https://httpbin.org/post" method="post" novalidate>
+        <fieldset>
+          <legend>Contact information</legend>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Optional subject">
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="6" required aria-required="true"></textarea>
+
+
+          <!-- required bot field -->
+          <input type="hidden" name="possible_bot" value="true">
+
+
+        <button type="submit">Send message</button>
+
+
+          <!-- Outputs below the fields -->
+          <output id="errorOutput" class="error" aria-live="polite" role="status"></output>
+          <output id="infoOutput" class="info" aria-live="polite" role="status"></output>
+
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
