@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Maxim Podgore</a>
+      <nav class="site-nav desktop" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <details class="site-menu">
+        <summary class="hamburger" aria-label="Toggle navigation">☰</summary>
+        <nav class="site-nav mobile" role="navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </details>
+      <button class="theme-toggle" aria-label="Switch to light mode" title="Toggle theme"></button>
+    </header>
+
     <main>
       <h1>Contact Us</h1>
 
@@ -47,5 +72,18 @@
         </fieldset>
       </form>
     </main>
+
+    <footer>
+      <p>&copy; 2025 Maxim</p>
+    </footer>
+
+    <noscript>
+        <style>
+            .theme-toggle { display: none; }
+        </style>
+        <p style="padding: 1rem; background: var(--bg-tertiary); margin: 1rem; border-radius: 8px;">Note: JavaScript is disabled. The theme toggle requires JavaScript, but the form works without it.</p>
+    </noscript>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/page-transitions.js"></script>
   </body>
 </html>
