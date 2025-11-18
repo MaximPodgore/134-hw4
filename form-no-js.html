@@ -12,21 +12,25 @@
 
       <p>If you'd like to get in touch, please fill out the form below and press Send. This version works without JavaScript.</p>
 
-      <form id="contactForm" action="https://httpbin.org/post" method="post" novalidate>
+      <form id="contactForm" action="https://httpbin.org/post" method="post">
         <fieldset>
           <legend>Contact information</legend>
 
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
+            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60" pattern="[A-Za-zÀ-ÖØ-öø-ÿ' \-]+" title="Name may contain letters, spaces, apostrophes and hyphens" aria-describedby="nameHelp">
+            <small id="nameHelp" class="muted">Required — letters, spaces, apostrophes and hyphens only.</small>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <input type="email" id="email" name="email" autocomplete="email" required maxlength="254" title="Enter a valid email address" aria-describedby="emailHelp">
+            <small id="emailHelp" class="muted">Required — we'll only accept a properly formatted email address.</small>
 
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Optional subject">
+            <input type="text" id="subject" name="subject" placeholder="Optional subject" maxlength="100" pattern="^[A-Za-z0-9\s\-\'\.,:;()?!]{0,100}$" title="Optional. Keep under 100 characters; avoid unusual symbols." aria-describedby="subjectHelp">
+            <small id="subjectHelp" class="muted">Optional — up to 100 characters.</small>
 
             <label for="comments">Comments</label>
-            <textarea id="comments" name="comments" rows="6" required aria-required="true"></textarea>
+            <textarea id="comments" name="comments" rows="6" required aria-required="true" minlength="10" maxlength="1000" aria-describedby="commentsHelp"></textarea>
+            <small id="commentsHelp" class="muted">Required — minimum 10 characters; max 1000.</small>
 
 
           <!-- required bot field -->
