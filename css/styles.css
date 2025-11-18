@@ -193,9 +193,15 @@ ul{padding-left:0}
   border-color: #6ee7a7;
 }
 
-/* Only reveal the error output once the user is interacting with the form and it's invalid */
-#contactForm output#errorOutput{display:none}
+/* Only reveal the outputs once the user is interacting with the form and it's invalid/valid */
+/* Hide both by default; reveal based on validity when the user is focused inside the form. */
+#contactForm output#errorOutput, #contactForm output#infoOutput{display:none}
+
+/* Show error output when any control is invalid while interacting */
 #contactForm:invalid:focus-within output#errorOutput{display:block}
+
+/* Show info output when the form is currently valid while interacting */
+#contactForm:valid:focus-within output#infoOutput{display:block}
 
 /* Keep output area from shifting layout */
 #contactForm output{transition:opacity .18s ease}
